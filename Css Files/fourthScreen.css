@@ -1,7 +1,6 @@
 @font-face {
   font-family: "SpeedeeCondGreek";
-  src: url("../Fonts/SpeedeeCondGreek-Bold.otf") format("opentype"),
-    url("../Fonts/SpeedeeCondGreek-Regular.otf") format("opentype"),
+  src: url("../Fonts/SpeedeeCondGreek-Regular.otf") format("opentype"),
     url("../Fonts/SpeedeeGreek-Bold.otf") format("opentype");
 }
 :root {
@@ -25,65 +24,44 @@ body {
 
   font-family: var(--default-font-family);
   font-size: 1rem;
-
   overflow: hidden;
 }
 
-img {
-  max-width: 100%;
-}
-button {
-  border: 1px solid transparent;
-  border-radius: 11.5px;
-  padding: 0.4rem 0.9rem;
-}
 main {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
-
+.list {
+  width: 90%;
+  margin-left: 1.5rem;
+  margin-top: -0.5rem;
+  font-size: 0.65rem;
+}
+.list--items {
+  margin-bottom: 0.2rem;
+}
 /** Custom Classes */
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
   gap: 1.1rem;
 }
-.logo {
-  width: 67%;
-}
-.rules {
-  text-align: center;
-  width: 70%;
-  font-size: 1.4rem;
-}
-.trademark {
-  width: 29%;
-  display: inline-flex;
-  vertical-align: middle;
-}
-.btn {
-  background-color: var(--Secondary-color);
-  color: var(--primary-color);
-  cursor: pointer;
-  font-weight: bold;
+.term__conditions {
+  font-weight: normal;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.1rem;
+  text-decoration-skip-ink: none;
 }
 
 @media (min-width: 400px) {
-  .logo {
-    width: 60%;
+  .list {
+    width: 90%;
+    font-size: 0.7rem;
   }
-  .rules {
-    text-align: center;
-    width: 70%;
-    font-size: 1.5rem;
-  }
-  .trademark {
-    width: 25%;
-    display: inline-flex;
-    vertical-align: middle;
+  .list--items {
+    margin-bottom: 0.6rem;
   }
 }
 /*** For tablet designs range upto 768 */
@@ -92,22 +70,11 @@ main {
     gap: 1rem;
     margin-top: 0rem;
   }
-  .logo {
-    width: 40%;
+  .list {
+    width: 95%;
+    font-size: 0.875rem;
   }
-
-  .btn {
-    font-size: 1.1rem;
-  }
-
-  .rules {
-    text-align: center;
-    width: 70%;
-    font-size: 1.5rem;
-  }
-  .trademark {
-    width: 15%;
-    display: inline-flex;
-    vertical-align: middle;
+  .list--items {
+    margin-bottom: 0.8rem;
   }
 }

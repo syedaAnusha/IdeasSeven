@@ -26,16 +26,19 @@ body {
   font-family: var(--default-font-family);
   font-size: 1rem;
 
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 img {
   max-width: 100%;
 }
+a {
+  all: unset;
+}
 button {
   border: 1px solid transparent;
   border-radius: 11.5px;
-  padding: 0.4rem 0.9rem;
+  padding: 0.4rem 2rem;
 }
 main {
   display: flex;
@@ -59,6 +62,37 @@ main {
   width: 70%;
   font-size: 1.4rem;
 }
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  padding: 0.5rem 0.5rem;
+  margin-inline: 1rem 1rem;
+}
+.description {
+  font-size: 1rem;
+  width: 100%;
+  border: 1px solid white;
+  background-color: var(--Secondary-color);
+  padding: 0.5rem 2rem;
+}
+.selected-option {
+  text-decoration-line: underline;
+  text-decoration-color: #fcb41a;
+  text-decoration-thickness: 0.12rem;
+  text-decoration-skip-ink: none;
+
+  display: inline-flex;
+  vertical-align: middle;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid black;
+}
+
 .trademark {
   width: 29%;
   display: inline-flex;
@@ -69,6 +103,12 @@ main {
   color: var(--primary-color);
   cursor: pointer;
   font-weight: bold;
+  margin-bottom: 1rem;
+}
+.terms--conditions {
+  font-size: 0.8rem;
+  text-align: center;
+  cursor: pointer;
 }
 
 @media (min-width: 400px) {
@@ -84,6 +124,17 @@ main {
     width: 25%;
     display: inline-flex;
     vertical-align: middle;
+  }
+  .box {
+    padding: 0.5rem 0.5rem;
+    margin-inline: 1rem 0.5rem;
+  }
+  .description {
+    font-size: 1rem;
+    width: 100%;
+    border: 1px solid white;
+    background-color: var(--Secondary-color);
+    padding: 0.5rem 2rem;
   }
 }
 /*** For tablet designs range upto 768 */
@@ -109,5 +160,16 @@ main {
     width: 15%;
     display: inline-flex;
     vertical-align: middle;
+  }
+  .box {
+    padding: 0.6rem 0.6rem;
+    margin-inline: 14rem 14rem;
+  }
+  .description {
+    font-size: 1rem;
+    width: 100%;
+    border: 1px solid white;
+    background-color: var(--Secondary-color);
+    padding: 0.5rem 2rem;
   }
 }
