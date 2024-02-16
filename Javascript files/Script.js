@@ -1,15 +1,15 @@
 function goToSecondPage() {
-  window.location.href = "../Html Files/secondScreen.html";
+  window.location.href = "../secondScreen.html";
 }
 
 function goToThirdPage() {
-  window.location.href = "../Html Files/thirdScreen.html";
+  window.location.href = "../thirdScreen.html";
 }
 
 function goToFourthPage() {
-  window.location.href = "../Html Files/fourthScreen.html";
+  window.location.href = "../fourthScreen.html";
 }
 
 function goToLastPage() {
-  window.location.href = "../Html Files/lastScreen.html";
+  window.location.href = "../lastScreen.html";
 }
