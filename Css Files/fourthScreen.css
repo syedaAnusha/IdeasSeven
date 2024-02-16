@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "SpeedeeCondGreek";
+  src: url("../Fonts/SpeedeeCondGreek-Bold.otf") format("opentype"),
+    url("../Fonts/SpeedeeCondGreek-Regular.otf") format("opentype"),
+    url("../Fonts/SpeedeeGreek-Bold.otf") format("opentype");
+}
+:root {
+  --default-font-family: "SpeedeeCondGreek", sans-serif;
+  --primary-color: #000;
+  --Secondary-color: #fff;
+}
+/**CSS RESET**/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url("../Assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  font-family: var(--default-font-family);
+  font-size: 1rem;
+
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+button {
+  border: 1px solid transparent;
+  border-radius: 11.5px;
+  padding: 0.4rem 0.9rem;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/** Custom Classes */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.1rem;
+}
+.logo {
+  width: 67%;
+}
+.rules {
+  text-align: center;
+  width: 70%;
+  font-size: 1.4rem;
+}
+.trademark {
+  width: 29%;
+  display: inline-flex;
+  vertical-align: middle;
+}
+.btn {
+  background-color: var(--Secondary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@media (min-width: 400px) {
+  .logo {
+    width: 60%;
+  }
+  .rules {
+    text-align: center;
+    width: 70%;
+    font-size: 1.5rem;
+  }
+  .trademark {
+    width: 25%;
+    display: inline-flex;
+    vertical-align: middle;
+  }
+}
+/*** For tablet designs range upto 768 */
+@media (min-width: 600px) {
+  .container {
+    gap: 1rem;
+    margin-top: 0rem;
+  }
+  .logo {
+    width: 40%;
+  }
+
+  .btn {
+    font-size: 1.1rem;
+  }
+
+  .rules {
+    text-align: center;
+    width: 70%;
+    font-size: 1.5rem;
+  }
+  .trademark {
+    width: 15%;
+    display: inline-flex;
+    vertical-align: middle;
+  }
+}
