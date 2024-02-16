@@ -59,6 +59,7 @@ main {
   color: var(--primary-color);
   cursor: pointer;
   font-weight: bold;
+  font-size: 1.1rem;
 }
 .man1 {
   width: 67%;
@@ -70,6 +71,9 @@ main {
   }
   .man1 {
     width: 55%;
+  }
+  .btn {
+    font-size: 1.3rem;
   }
 }
 /*** For tablet designs range upto 768 */
@@ -85,6 +89,6 @@ main {
     width: 25%;
   }
   .btn {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
 }
