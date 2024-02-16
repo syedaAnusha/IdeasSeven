@@ -1,7 +1,3 @@
-function goToSecondPage() {
-  window.location.href = "./secondScreen.html";
-}
-
 function goToThirdPage() {
   window.location.href = "./thirdScreen.html";
 }
