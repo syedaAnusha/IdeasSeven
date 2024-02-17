@@ -26,28 +26,32 @@
           .getElementById("selected-option")
           .textContent.trim();
 
+        // Basic validation: all fields must be filled!
         if (name === "" || city === "" || email === "" || phone === "") {
           alert("Please fill in all fields.");
           return false;
         }
 
-        // Basic validation for phone number (checking if it's a number and has 10 digits)
+        // Basic validation for phone number (checking if it's a number and has 11 digits)
         let phonePattern = /^[0-9]{11}$/;
         if (!phonePattern.test(phone)) {
           alert("Please enter a valid phone number.");
           return false;
         }
 
+        // Basic validation for email
         let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) {
           alert("Please enter a valid email address.");
           return false;
         }
+        // Basic validation to ensure option must be selected from dropdown!
         if (selectedOpt === "") {
           alert("Please select option from dropdown");
           return false;
         }
 
+        //Finally submitting form, if all fields are properly filled and validated!
         document.getElementById("myForm").submit();
         goToFourthPage();
       }
