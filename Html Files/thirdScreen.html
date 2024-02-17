@@ -55,6 +55,25 @@
         document.getElementById("myForm").submit();
         goToFourthPage();
       }
+
+      //To close the dropdown
+      function toggleDropdown() {
+        var dropdownContent = document.querySelector(".dropdown-content");
+        dropdownContent.style.display =
+          dropdownContent.style.display === "block" ? "none" : "block";
+      }
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", function (event) {
+        var dropdownContent = document.querySelector(".dropdown-content");
+        var dropbtn = document.querySelector(".dropbtn");
+        if (
+          !event.target.matches(".dropbtn") &&
+          !event.target.matches(".dropdown-content")
+        ) {
+          dropdownContent.style.display = "none";
+        }
+      });
     </script>
   </head>
   <body>
@@ -83,7 +102,7 @@
         </section>
 
         <div class="dropdown">
-          <button class="dropbtn btn">
+          <button class="dropbtn btn" onclick="toggleDropdown()">
             Απάντηση
             <span
               ><img
