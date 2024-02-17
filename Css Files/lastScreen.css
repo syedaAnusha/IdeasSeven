@@ -54,9 +54,19 @@ main {
   font-size: 2.5rem;
 }
 .man1 {
-  width: 67%;
+  width: 77%;
 }
-
+@media (min-width: 321px) {
+  .logo {
+    width: 60%;
+  }
+  .man1 {
+    width: 67%;
+  }
+  .thanks {
+    font-size: 3rem;
+  }
+}
 @media (min-width: 400px) {
   .logo {
     width: 60%;
@@ -81,6 +91,6 @@ main {
     width: 40%;
   }
   .man1 {
-    width: 25%;
+    width: 26%;
   }
 }

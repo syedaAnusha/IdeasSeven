@@ -32,13 +32,6 @@
           return false;
         }
 
-        // Basic validation for phone number (checking if it's a number and has 11 digits)
-        let phonePattern = /^[0-9]{11}$/;
-        if (!phonePattern.test(phone)) {
-          alert("Please enter a valid phone number.");
-          return false;
-        }
-
         // Basic validation for email
         let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) {
