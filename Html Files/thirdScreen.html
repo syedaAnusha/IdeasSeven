@@ -13,6 +13,44 @@
       function goToFourthPage() {
         window.location.href = "./lastScreen.html";
       }
+      function updateSelectedOption(optionText) {
+        document.getElementById("selected-option").textContent = optionText;
+      }
+
+      function validate() {
+        let name = document.getElementById("first-name").value;
+        let phone = document.getElementById("cell-no").value;
+        let email = document.getElementById("email").value;
+        let city = document.getElementById("city").value;
+        let selectedOpt = document
+          .getElementById("selected-option")
+          .textContent.trim();
+
+        if (name === "" || city === "" || email === "" || phone === "") {
+          alert("Please fill in all fields.");
+          return false;
+        }
+
+        // Basic validation for phone number (checking if it's a number and has 10 digits)
+        let phonePattern = /^[0-9]{11}$/;
+        if (!phonePattern.test(phone)) {
+          alert("Please enter a valid phone number.");
+          return false;
+        }
+
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          alert("Please enter a valid email address.");
+          return false;
+        }
+        if (selectedOpt === "") {
+          alert("Please select option from dropdown");
+          return false;
+        }
+
+        document.getElementById("myForm").submit();
+        goToFourthPage();
+      }
     </script>
   </head>
   <body>
@@ -31,10 +69,57 @@
           <p class="rules description">
             Όταν θέλω να σε δω, δίπλα σου να βρεθώ η αγάπη σε ζητάει, σήκωσέ το.
             Ένα στιχάκι απλό, σου στέλνω ηχητικό η αγάπη τραγουδάει,
-            <span class="selected-option">any txt</span>
+            <span class="selected-option" id="selected-option"
+              >&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;
+              &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;
+              &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;
+              &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;
+            </span>
           </p>
         </section>
-        <form class="form">
+
+        <div class="dropdown">
+          <button class="dropbtn btn">
+            Απάντηση
+            <span
+              ><img
+                src="../Assets/Asset 2.png"
+                alt="dropdown icon"
+                class="dropdown-icon"
+            /></span>
+          </button>
+          <div class="dropdown-content">
+            <a onclick="updateSelectedOption('Άκουσέ το!')">Άκουσέ το! </a>
+            <a onclick="updateSelectedOption('Αγάπησέ το!')">Αγάπησέ το!</a>
+            <a onclick="updateSelectedOption('Χόρεψέ το!')">Χόρεψέ το!</a>
+          </div>
+        </div>
+
+        <form id="myForm" class="form">
+          <label for="name">Ονοματεπώνυμο:</label>
+          <input
+            type="text"
+            name="name"
+            id="first-name"
+            class="input"
+            required
+          />
+
+          <label for="phone_no">Τηλ.</label>
+          <input
+            type="number"
+            name="phone_no"
+            id="cell-no"
+            class="input"
+            required
+          />
+
+          <label for="email">Email.</label>
+          <input type="email" name="email" id="email" class="input" required />
+
+          <label for="city">Πόλη:</label>
+          <input type="text" name="city" id="city" class="input" required />
+
           <a
             href="./fourthScreen.html"
             target="_blank"
@@ -43,12 +128,7 @@
             Κανονισμών.</a
           >
         </form>
-        <button
-          type="button"
-          class="btn"
-          onclick="goToFourthPage()"
-          id="submit"
-        >
+        <button type="button" class="btn" onclick="validate()" id="submit">
           Υποβολή
         </button>
       </div>
