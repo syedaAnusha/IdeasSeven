@@ -62,15 +62,27 @@ main {
   font-size: 1.1rem;
 }
 .man1 {
-  width: 67%;
+  width: 80.5%;
 }
 
+@media (min-width: 321px) {
+  .logo {
+    width: 60%;
+  }
+  .man1 {
+    width: 66%;
+  }
+  .btn {
+    font-size: 1.3rem;
+  }
+}
 @media (min-width: 400px) {
   .logo {
     width: 60%;
   }
   .man1 {
-    width: 55%;
+    margin-top: -0.5rem;
+    width: 55.5%;
   }
   .btn {
     font-size: 1.3rem;
@@ -86,7 +98,7 @@ main {
     width: 40%;
   }
   .man1 {
-    width: 25%;
+    width: 26.3%;
   }
   .btn {
     font-size: 1.5rem;
