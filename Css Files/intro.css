@@ -63,6 +63,8 @@ main {
 }
 .man1 {
   width: 100%;
+  position: absolute;
+  bottom: 0%;
 }
 
 @media (min-width: 300px) {
