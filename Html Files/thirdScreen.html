@@ -55,6 +55,14 @@
         dropdownContent.style.display =
           dropdownContent.style.display === "block" ? "none" : "block";
       }
+      // Function to toggle dropdown when clicking on the icon
+      function toggleDropdownOnIcon(event) {
+        var dropdownContent = document.querySelector(".dropdown-content");
+        dropdownContent.style.display =
+          dropdownContent.style.display === "block" ? "none" : "block";
+        // Stop propagation to prevent the event from bubbling up to the document
+        event.stopPropagation();
+      }
 
       // Close dropdown when clicking outside
       document.addEventListener("click", function (event) {
@@ -66,6 +74,12 @@
         ) {
           dropdownContent.style.display = "none";
         }
+      });
+
+      // Attach click event to the image with class "dropdown-icon"
+      document.addEventListener("DOMContentLoaded", function () {
+        var dropdownIcon = document.querySelector(".dropdown-icon");
+        dropdownIcon.addEventListener("click", toggleDropdownOnIcon);
       });
     </script>
   </head>
@@ -98,16 +112,15 @@
           </p>
         </section>
 
-        <div class="dropdown">
-          <button class="dropbtn btn" onclick="toggleDropdown()">
+        <div class="dropdown" onclick="toggleDropdown()">
+          <button class="dropbtn btn">
             Απάντηση
-            <span onclick="toggleDropdown()"
-              ><img
-                src="../Assets/Asset 2.png"
-                alt="dropdown icon"
-                class="dropdown-icon"
-                loading="eager"
-            /></span>
+            <img
+              src="../Assets/Asset 2.png"
+              alt="dropdown icon"
+              class="dropdown-icon"
+              loading="eager"
+            />
           </button>
           <div class="dropdown-content">
             <a onclick="updateSelectedOption('Άκουσέ το!')">Άκουσέ το! </a>
