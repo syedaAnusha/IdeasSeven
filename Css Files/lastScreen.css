@@ -49,6 +49,7 @@ main {
 }
 .logo {
   width: 67%;
+  margin-top: 1rem;
 }
 .thanks {
   font-size: 2.5rem;
@@ -56,7 +57,7 @@ main {
 .man1 {
   width: 100%;
   position: absolute;
-  bottom: 0%;
+  bottom: -2.99%;
 }
 @media (min-width: 300px) {
   .logo {
