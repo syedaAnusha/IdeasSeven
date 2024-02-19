@@ -160,16 +160,17 @@
         </div>
 
         <form id="myForm" class="form">
-          <label for="name">Ονοματεπώνυμο:</label>
+          <label for="first-name">Ονοματεπώνυμο:</label>
           <input
             type="text"
-            name="name"
+            name="first-name"
             id="first-name"
             class="input"
             required
+            autocomplete="given-name"
           />
 
-          <label for="phone_no">Τηλ.</label>
+          <label for="cell-no">Τηλ.</label>
           <input
             type="number"
             name="phone_no"
@@ -179,7 +180,14 @@
           />
 
           <label for="email">Email.</label>
-          <input type="email" name="email" id="email" class="input" required />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="input"
+            autocomplete="off"
+            required
+          />
 
           <label for="city">Πόλη:</label>
           <input type="text" name="city" id="city" class="input" required />
