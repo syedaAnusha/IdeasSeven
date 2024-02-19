@@ -84,7 +84,7 @@
 
       // For lightbox
       document.addEventListener("DOMContentLoaded", function () {
-        // Function to open "fourthScreen.html" as a lightbox
+        // Function to open the terms and conditions in the lightbox
         function openTermsLightbox(event) {
           event.preventDefault(); // Prevent the default behavior of the link
           var lightboxContent = document.getElementById("lightbox-content");
@@ -103,7 +103,8 @@
         termsLink.addEventListener("click", openTermsLightbox);
 
         // Function to close the lightbox
-        function closeLightbox() {
+        function closeLightbox(event) {
+          event.preventDefault(); // Prevent the default behavior of the button
           document.getElementById("lightbox").style.display = "none"; // Hide the lightbox
         }
 
