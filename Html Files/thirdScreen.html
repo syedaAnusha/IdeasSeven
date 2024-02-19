@@ -81,6 +81,36 @@
         var dropdownIcon = document.querySelector(".dropdown-icon");
         dropdownIcon.addEventListener("click", toggleDropdownOnIcon);
       });
+
+      // For lightbox
+      document.addEventListener("DOMContentLoaded", function () {
+        // Function to open "fourthScreen.html" as a lightbox
+        function openTermsLightbox(event) {
+          event.preventDefault(); // Prevent the default behavior of the link
+          var lightboxContent = document.getElementById("lightbox-content");
+          lightboxContent.innerHTML = ""; // Clear any previous content
+          var iframe = document.createElement("iframe");
+          iframe.src = "./fourthScreen.html"; // Load fourthScreen.html into the iframe
+          iframe.frameBorder = 0; // Remove iframe border
+          iframe.width = "100%"; // Set iframe width
+          iframe.height = window.innerHeight / 1.1; // Set iframe height
+          lightboxContent.appendChild(iframe); // Append iframe to lightbox content
+          document.getElementById("lightbox").style.display = "block"; // Display the lightbox
+        }
+
+        // Attach click event to the terms and conditions link
+        var termsLink = document.getElementById("termsLink");
+        termsLink.addEventListener("click", openTermsLightbox);
+
+        // Function to close the lightbox
+        function closeLightbox() {
+          document.getElementById("lightbox").style.display = "none"; // Hide the lightbox
+        }
+
+        // Attach click event to close button in the lightbox
+        var closeBtn = document.getElementById("closeBtn");
+        closeBtn.addEventListener("click", closeLightbox);
+      });
     </script>
   </head>
   <body>
@@ -154,15 +184,28 @@
           <label for="city">Πόλη:</label>
           <input type="text" name="city" id="city" class="input" required />
 
-          <a
-            href="./fourthScreen.html"
-            target="_blank"
-            class="terms--conditions"
+          <!-- Clickable Terms to open T&C as ligthbox -->
+          <a href="./fourthScreen.html" id="termsLink" class="terms--conditions"
             >Η συμμετοχή στην κλήρωση συνεπάγεται αποδοχή των Όρων &
             Κανονισμών.</a
           >
+
+          <!-- Lightbox -->
+          <div id="lightbox" class="lightbox">
+            <div class="content" id="lightbox-content">
+              <!-- Content will be dynamically added here -->
+            </div>
+            <button id="closeBtn" class="closeBtn">
+              <img src="../Assets/x-square.svg" alt="cross-icon" />
+            </button>
+          </div>
         </form>
-        <button type="button" class="btn" onclick="validate()" id="submit">
+        <button
+          type="button"
+          class="btn button"
+          onclick="validate()"
+          id="submit"
+        >
           Υποβολή
         </button>
       </div>
